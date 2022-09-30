@@ -1,2 +1,15 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>つぶやき一覧</h1>
+
+<table>
+	<tr>
+		<th>内容</th>
+	</tr>
+
+<% @posts.each do |post| %>
+		<tr>
+			<td><%= post.content %></td>
+		</tr>
+<% end %>
+</table>
+
+<%= link_to 'つぶやき一覧画面に戻る', blogs_path %>

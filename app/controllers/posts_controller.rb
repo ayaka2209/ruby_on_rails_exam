@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all
   end
 
   def new
@@ -7,7 +8,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(content: params[:post][:content])
+    Post.create(post_params)
+    redirect_to new_post_path
+  end
+
+  def show
     redirect_to new_post_path
   end
 end

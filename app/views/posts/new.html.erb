@@ -1,4 +1,9 @@
 <%= form_with(model: @post, local: true) do |form| %>
+	<% if @post.errors.any? %>
+		<h2>エラー</h2>
+		<P>1文字以上140文字しかつぶやけないようにすること</P>
+	<% end %>
+
 	<div class="post_content">
 	<%= form.label :content %>
 	<%= form.text_field :content %>

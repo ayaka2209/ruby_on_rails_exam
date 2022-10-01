@@ -1,7 +1,7 @@
-<%= form_with(model: @post, local: true) do |form| %>
+<%= form_with(model: @post, local: true, url: choose_new_or_edit ) do |form| %>
 	<% if @post.errors.any? %>
 		<h2>エラー</h2>
-		<P>1文字以上140文字しかつぶやけないようにすること</P>
+		<P>1文字以上140文字以内でつぶやいてください</P>
 	<% end %>
 
 	<div class="post_content">
@@ -10,3 +10,8 @@
 	</div>
 	<%= form.submit %>
 <% end %>
+
+<%= link_to "ブログ一覧画面にもどる", posts_path %>
+<footer>
+  <p>exam</p>
+</footer>

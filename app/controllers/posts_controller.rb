@@ -13,6 +13,13 @@ class PostsController < ApplicationController
   end
 
   def show
-    redirect_to new_post_path
+    @post = Post.find(params[:id])
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:content)
+  end
+
 end
